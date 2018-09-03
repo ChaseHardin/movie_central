@@ -1,6 +1,6 @@
 import React from 'react';
 import { configure, shallow, mount } from 'enzyme';
-import App from './App';
+import App from './MovieComponent';
 import Adapter from 'enzyme-adapter-react-16';
 
 var assert = require('assert');
