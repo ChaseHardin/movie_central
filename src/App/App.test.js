@@ -25,4 +25,13 @@ describe('Movies', () => {
 
     assert.equal(actual, expected);
   });
+
+  it('should show movie rating', () => {
+    const wrapper = mount(<App />);
+
+    const actual = wrapper.find('.movie-rating').text();
+    const expected = 82;
+
+    assert.equal(actual, expected.toString());
+  });
 });

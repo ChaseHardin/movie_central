@@ -9,7 +9,8 @@ class App extends Component {
 
     const movie = {
       title: 'The Lord of the Rings: The Fellowship of the Ring',
-      releaseDate: 'December 18, 2001'
+      releaseDate: 'December 18, 2001',
+      rating: 82
     }
 
     this.state = {
@@ -25,6 +26,9 @@ class App extends Component {
         </div>
         <div className="movie-release-date">
           {this.state.movie.releaseDate}
+        </div>
+        <div className="movie-rating">
+          {this.state.movie.rating}
         </div>
       </div>
     );
