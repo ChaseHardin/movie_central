@@ -20,20 +20,17 @@ class MovieComponent extends Component {
 
   render() {
     return (
-      <div>
-        <div className="movie-title">
-          {this.state.movie.title}
+        <div className="card" style={{ width: 400 }}>
+          <img className="card-img-top" heigt="100" src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/eDkDYEUIHEp5qavNa5k6XsMHgbf.jpg" alt="Card image cap"></img>
+          <div className="card-body">
+            <h5 className="card-title">{this.state.movie.title}</h5>
+            <h6 className="movie-rating">{this.state.movie.rating}</h6>
+            <h6 className="movie-release-date">{this.state.movie.releaseDate}</h6>
+            <p className="card-text">{this.state.movie.overview}</p>
+
+            <a href="#" className="btn btn-primary">Go somewhere</a>
+          </div>
         </div>
-        <div className="movie-release-date">
-          {this.state.movie.releaseDate}
-        </div>
-        <div className="movie-rating">
-          {this.state.movie.rating}
-        </div>
-        <div className="movie-overview">
-          {this.state.movie.overview}
-        </div>
-      </div>
     );
   }
 }

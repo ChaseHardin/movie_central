@@ -11,7 +11,7 @@ describe('Movies', () => {
   it('should show a movie title', () => {
     const wrapper = mount(<MovieComponent />);
 
-    const actual = wrapper.find('.movie-title').text();
+    const actual = wrapper.find('.card-title').text();
     const expected = 'The Lord of the Rings: The Fellowship of the Ring';
 
     assert.equal(actual, expected);
@@ -38,7 +38,7 @@ describe('Movies', () => {
   it('should show movie overview', () => {
     const wrapper = mount(<MovieComponent />);
 
-    const actual = wrapper.find('.movie-overview').text();
+    const actual = wrapper.find('.card-text').text();
     const expected = 'Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed…';
 
     assert.equal(actual, expected.toString());
