@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import MovieComponent from './Movie/MovieComponent';
 import registerServiceWorker from './registerServiceWorker';
+import MovieGridComponent from './MovieGrid/MovieGridComponent';
 
-ReactDOM.render(<MovieComponent />, document.getElementById('root'));
+ReactDOM.render(<MovieGridComponent />, document.getElementById('root'));
 registerServiceWorker();
