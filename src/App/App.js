@@ -10,7 +10,8 @@ class App extends Component {
     const movie = {
       title: 'The Lord of the Rings: The Fellowship of the Ring',
       releaseDate: 'December 18, 2001',
-      rating: 82
+      rating: 82,
+      overview: 'Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed…'
     }
 
     this.state = {
@@ -29,6 +30,9 @@ class App extends Component {
         </div>
         <div className="movie-rating">
           {this.state.movie.rating}
+        </div>
+        <div className="movie-overview">
+          {this.state.movie.overview}
         </div>
       </div>
     );
