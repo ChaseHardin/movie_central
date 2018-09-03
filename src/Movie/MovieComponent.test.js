@@ -8,39 +8,36 @@ var assert = require('assert');
 configure({ adapter: new Adapter() });
 
 describe('Movies', () => {
+  var wrapper;
+  const expectedTitle = 'The Lord of the Rings: The Fellowship of the Ring';
+  const expectedReleaseDate = 'December 18, 2001';
+  const expectedRating = 82;
+  const expectedOverview = 'Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed…';
+
+  beforeEach(() => {
+    const mockedMovie = {
+      title: 'The Lord of the Rings: The Fellowship of the Ring',
+      releaseDate: 'December 18, 2001',
+      rating: 82,
+      overview: expectedOverview
+    };
+
+    wrapper = mount(<MovieComponent movie={mockedMovie} />);
+  });
+
   it('should show a movie title', () => {
-    const wrapper = mount(<MovieComponent />);
-
-    const actual = wrapper.find('.card-title').text();
-    const expected = 'The Lord of the Rings: The Fellowship of the Ring';
-
-    assert.equal(actual, expected);
+    assert.equal(wrapper.find('.card-title').text(), expectedTitle);
   });
 
   it('should show release date', () => {
-    const wrapper = mount(<MovieComponent />);
-
-    const actual = wrapper.find('.movie-release-date').text();
-    const expected = 'December 18, 2001';
-
-    assert.equal(actual, expected);
+    assert.equal(wrapper.find('.movie-release-date').text(), expectedReleaseDate);
   });
 
   it('should show movie rating', () => {
-    const wrapper = mount(<MovieComponent />);
-
-    const actual = wrapper.find('.movie-rating').text();
-    const expected = 82;
-
-    assert.equal(actual, expected.toString());
+    assert.equal(wrapper.find('.movie-rating').text(), expectedRating.toString());
   });
 
   it('should show movie overview', () => {
-    const wrapper = mount(<MovieComponent />);
-
-    const actual = wrapper.find('.card-text').text();
-    const expected = 'Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed…';
-
-    assert.equal(actual, expected.toString());
+    assert.equal(wrapper.find('.card-text').text(), expectedOverview);
   });
 });
