@@ -7,8 +7,8 @@ var assert = require('assert');
 
 configure({ adapter: new Adapter() });
 
-describe('Movies', () => {
-  var wrapper;
+describe('MovieComponent', () => {
+  var component;
   const expectedTitle = 'The Lord of the Rings: The Fellowship of the Ring';
   const expectedReleaseDate = 'December 18, 2001';
   const expectedRating = 82;
@@ -16,28 +16,28 @@ describe('Movies', () => {
 
   beforeEach(() => {
     const mockedMovie = {
-      title: 'The Lord of the Rings: The Fellowship of the Ring',
-      releaseDate: 'December 18, 2001',
-      rating: 82,
+      title: expectedTitle,
+      releaseDate: expectedReleaseDate,
+      rating: expectedRating,
       overview: expectedOverview
     };
 
-    wrapper = mount(<MovieComponent movie={mockedMovie} />);
+    component = mount(<MovieComponent movie={mockedMovie} />);
   });
 
   it('should show a movie title', () => {
-    assert.equal(wrapper.find('.card-title').text(), expectedTitle);
+    assert.equal(component.find('.card-title').text(), expectedTitle);
   });
 
   it('should show release date', () => {
-    assert.equal(wrapper.find('.movie-release-date').text(), expectedReleaseDate);
+    assert.equal(component.find('.movie-release-date').text(), expectedReleaseDate);
   });
 
   it('should show movie rating', () => {
-    assert.equal(wrapper.find('.movie-rating').text(), expectedRating.toString());
+    assert.equal(component.find('.movie-rating').text(), expectedRating.toString());
   });
 
   it('should show movie overview', () => {
-    assert.equal(wrapper.find('.card-text').text(), expectedOverview);
+    assert.equal(component.find('.card-text').text(), expectedOverview);
   });
 });
